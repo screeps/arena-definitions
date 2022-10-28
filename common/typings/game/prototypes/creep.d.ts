@@ -137,10 +137,13 @@ declare module "game/prototypes" {
         hitsMax: number;
 
         /** Whether it is your creep */
-        my: boolean
+        my: boolean;
 
         /** A {@link Store} object that contains cargo of this creep */
         store: Store;
+
+        /** Whether this creep is still being spawned */
+        spawning: boolean;
 
         /**
          * Attack another creep or structure in a short-ranged attack. Requires the {@link ATTACK} body part
