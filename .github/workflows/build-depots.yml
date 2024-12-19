@@ -8,32 +8,22 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'skip ci')"
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: ⤵️ Checkout
         uses: actions/checkout@v3
-      - name: Generate depot tag
+      - name: 🔖 Generate depot tag
         run: echo '::set-output name=IMAGE_TAG::'$(echo ${{ github.sha }} | cut -c1-8)
         id: tag-generator
-      - name: Prepare artifact data
+      - name: 🏗️ Prepare artifact data
         run: |
           mkdir -p .depot/win/resources/app/arena-definitions && cp -r ./[!.]* .depot/win/resources/app/arena-definitions/
           mkdir -p .depot/mac/Arena.app/Contents/Resources/app/arena-definitions && cp -r ./[!.]* .depot/mac/Arena.app/Contents/Resources/app/arena-definitions/
-      - name: Publish depot (win)
+      - name: 📦 Publish depot (win)
         uses: actions/upload-artifact@v3
         with:
           name: definitions-${{ steps.tag-generator.outputs.IMAGE_TAG }}-win
           path: .depot/win
-      - name: Publish depot (mac)
+      - name: 📦 Publish depot (mac)
         uses: actions/upload-artifact@v3
         with:
           name: definitions-${{ steps.tag-generator.outputs.IMAGE_TAG }}-mac
           path: .depot/mac
-      - name: Create tag
-        uses: actions/github-script@v5
-        with:
-          script: |
-            github.rest.git.createRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: 'refs/tags/build-${{ steps.tag-generator.outputs.IMAGE_TAG }}',
-              sha: context.sha
-            })
