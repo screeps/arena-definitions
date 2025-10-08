@@ -1,8 +1,8 @@
 import {SearchPathOptions} from "../path-finder";
 
-declare module "game/prototypes" {
+declare module "game/prototypes/game-object" {
     import { getObjectById, FindPathOptions } from "game/utils";
-
+    
     import { findPath } from "game/utils"; // eslint-disable-line @typescript-eslint/no-unused-vars
 
     /** Position of object in the room */

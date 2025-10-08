@@ -1,4 +1,8 @@
-declare module "game/prototypes" {
+declare module "game/prototypes/construction-site" {
+    
+    import { Structure } from "game/prototypes/structure";
+    import { GameObject } from "game/prototypes/game-object";
+
     /**
      * A site of a structure which is currently under construction
      */

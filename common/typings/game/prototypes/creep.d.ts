@@ -1,4 +1,4 @@
-declare module "game/prototypes" {
+declare module "game/prototypes/creep" {
     import { Direction, FindPathOptions } from "game/utils";
     import {
         OK,
@@ -13,7 +13,14 @@ declare module "game/prototypes" {
         ATTACK, CARRY, HEAL, MOVE, RANGED_ATTACK, WORK
     } from "game/constants";
 
-    import { findPath } from "game/utils"; // eslint-disable-line @typescript-eslint/no-unused-vars
+    import { findPath } from "game/utils";
+    import { Position } from "game/utils";
+    import { GameObject } from "game/prototypes/game-object";
+    import { Structure } from "game/prototypes/structure";
+    import { ConstructionSite } from "game/prototypes/construction-site";
+    import { Resource, ResourceType } from "game/prototypes/resource";
+    import { Source } from "game/prototypes/source";
+    import { Store } from "game/prototypes/store";
 
     type BodyPartType =
         typeof ATTACK |

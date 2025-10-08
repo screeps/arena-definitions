@@ -1,4 +1,7 @@
-declare module "game/prototypes" {
+declare module "game/prototypes/owned-structure" {
+
+    import { Structure } from "game/prototypes/structure";
+
     /** The base prototype for a structure that has an owner */
     export abstract class OwnedStructure extends Structure {
 
