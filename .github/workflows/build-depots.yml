@@ -16,7 +16,7 @@ jobs:
       - name: 🏗️ Prepare artifact data
         run: |
           mkdir -p .depot/win/resources/app/arena-definitions && cp -r ./[!.]* .depot/win/resources/app/arena-definitions/
-          mkdir -p .depot/mac/Arena.app/Contents/Resources/app/arena-definitions && cp -r ./[!.]* .depot/mac/Arena.app/Contents/Resources/app/arena-definitions/
+          mkdir -p .depot/mac/screeps_arena.app/Contents/Resources/app/arena-definitions && cp -r ./[!.]* .depot/mac/screeps_arena.app/Contents/Resources/app/arena-definitions/
       - name: 📦 Publish depot (win)
         uses: actions/upload-artifact@v4
         with:
