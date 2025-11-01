@@ -44,6 +44,7 @@ declare module "game/prototypes/creep" {
         typeof ERR_NO_BODYPART |
         typeof ERR_NOT_ENOUGH_RESOURCES |
         typeof ERR_INVALID_TARGET |
+        typeof ERR_FULL |
         typeof ERR_NOT_IN_RANGE;
 
     type CreepDropResult =
@@ -153,11 +154,11 @@ declare module "game/prototypes/creep" {
         spawning: boolean;
 
         /**
-         * Attack another creep or structure in a short-ranged attack. Requires the {@link ATTACK} body part
+         * Attack another creep, structure, or construction site in a short-ranged attack. Requires the {@link ATTACK} body part
          * @param target The target object
          * @returns Either {@link OK} or one of ERR_* error codes
          */
-        attack(target: Creep|Structure): CreepAttackResult;
+        attack(target: Creep|Structure|ConstructionSite): CreepAttackResult;
 
         /**
          * Build a structure at the target construction site using carried energy.
