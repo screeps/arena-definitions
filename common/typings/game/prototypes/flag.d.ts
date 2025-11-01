@@ -1,4 +1,4 @@
-declare module "arena/season_alpha/capture_the_flag/advanced/prototypes" {
+declare module "game/prototypes/flag" {
     import {GameObject} from "game/prototypes";
 
     /** A flag is a key game object for this arena. Capture all flags to win the game */

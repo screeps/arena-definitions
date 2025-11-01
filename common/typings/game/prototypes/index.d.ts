@@ -13,4 +13,5 @@ declare module "game/prototypes" {
     export {ConstructionSite} from "game/prototypes/construction-site";
     export {StructureExtension} from "game/prototypes/extension";
     export {StructureRoad} from "game/prototypes/road";
+    export {Flag} from "game/prototypes/flag";
 }
