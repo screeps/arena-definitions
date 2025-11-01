@@ -14,6 +14,19 @@ declare module "game/prototypes/game-object" {
         y: number;
     }
 
+    export type EffectData = {
+        /** The effect multiplier */
+        multiplier: number;
+    }
+
+    /** Represents an effect applied to a game object */
+    export class Effect {
+        /** The effect type */
+        effectType: string;
+        /** The effect data */
+        data: EffectData;
+    }
+
     /**
      * Basic prototype for game objects.
      * All objects and classes are inherited from this class
@@ -33,6 +46,9 @@ declare module "game/prototypes/game-object" {
 
         /** The Y coordinate in the room */
         y: number;
+
+        /** An array with the effects applied to this object */
+        effects?: Effect[]|null;
 
         /**
          * Find a position with the shortest path from this game object
