@@ -9,4 +9,15 @@ declare module "game" {
     export * as utils from "game/utils";
     export * from "game/visual";
     export * as visual from "game/visual";
+
+    export interface ArenaInfo {
+        name: string;
+        season: string;
+        level: number;
+        ticksLimit: number;
+        cpuTimeLimit: number;
+        cpuTimeLimitFirstTick: number;
+    }
+
+    export const arenaInfo: ArenaInfo;
 }
